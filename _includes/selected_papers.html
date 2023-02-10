@@ -1,0 +1,8 @@
+
+<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<hr>
+<div class="publications">
+  <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
+  {% bibliography -f papers -q @*[selected=true]* %}
+</div>
