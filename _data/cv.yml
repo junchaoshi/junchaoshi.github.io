@@ -1,0 +1,99 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Junchao Shi
+    - name: Languages
+      value: Chinese (Mandarin, <a href='https://en.wikipedia.org/wiki/Wu_Chinese'>Wu</a>), English
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Ph.D. in Genetics, Genomics and Bioinformatics
+      institution: University of California, Riverside, United States
+      year: 2019 - 2021
+      description:
+        - <u>Advisors:</u> <a href='http://qichen-lab.info/'>Dr. Qi Chen</a> and <a href='https://tongzhoulab.org/'>Dr. Tong Zhou</a>
+        - 'Thesis: Exploring Non-Canonical Regulatory Small RNAs in Mammals'
+    - title: Ph.D. student in Cell and Molecular Biology
+      institution: University of Nevada, Reno, United States
+      year: 2016 - 2019
+      description:
+        - <u>Advisors:</u> <a href='http://qichen-lab.info/'>Dr. Qi Chen</a> and <a href='https://tongzhoulab.org/'>Dr. Tong Zhou</a>
+        - 'Thesis: Exploring Non-Canonical Regulatory Small RNAs in Mammals'
+    - title: M.S. in Developmental Biology (summa cum laude)
+      institution: University of Chinese academy of Sciences, China
+      year: 2013 - 2016
+      description:
+        - <u>Advisors:</u> <a href='https://orcid.org/0000-0002-2721-635X'>Prof. En-kui Duan</a> and <a href='https://www.researchgate.net/profile/Haibin-Wang-8'>Prof. Haibin Wang</a>
+        - 'Thesis: Dynamic transcriptional symmetry-breaking pre-implantation mammalian embryo development'
+    - title: B.S. in Biotechnology (Animal) (summa cum laude)
+      institution: Jilin University, China
+      year: 2008 - 2012
+      description:
+        - 'Thesis: Expression analysis of AQP3 splicing isoforms in mouse testis'
+
+- title: Employment
+  type: time_table
+  contents:
+    - title: Principal Investigator
+      institution:  Beijing Institute of Genomics, Chinese Academy of Sciences / China National Center for Bioinformation
+      year: In coming
+    - title: Postdoctoral Scholar in Bioinformatics and RNA Biology
+      institution:  University of California, Riverside, United States
+      year: 2021 - Present
+    - title: Research Assistant
+      institution:  Institute of Zoology, Chinese Academy of Sciences, China
+      year: 2012 - 2013
+
+- title: Bioinformatics tools
+  type: time_table
+  contents:
+    - title: <a href="https://github.com/junchaoshi/sports1.1">SPORTS1.1</a>
+      year: 2018
+      description: <a href="https://www.sciencedirect.com/science/article/pii/S1672022918300445">Small non-coding RNA annotation Pipeline Optimized for rRNA- and tRNA-Derived Small RNAs</a>
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2019
+      items: 
+        - Dean's Distinguished Fellowship Award at University of California, Riverside
+    - year: 2018
+      items: 
+        - Raymond H. Berner Outstanding Graduate Student Researcher in Molecular Biosciences Scholarship at University of Nevada, Reno
+    - year: 2015
+      items: 
+        - National Scholarship of China
+    - year: 2009
+      items: 
+        - National Scholarship of China
+
+- title: Invited Talks
+  type: time_table
+  contents:
+    - year: 2022
+      items: 
+        - The 5th Annual IIGB Symposium at University of California, Riverside, United States
+    - year: 2021
+      items: 
+        - 'The GECKO Conference: Epigenetic Inheritance across species, Virtual Meeting'
+        - 'Keystone Symposia Non-Coding RNAs: Biology and Applications, Virtual Meeting'
+    - year: 2019
+      items: 
+        - The 4th China-US International Symposium of HSCT and Cancer Immunology, Chongqing, China
+    - year: 2018
+      items: 
+        - Bioinformatics Mixer at University of Nevada, Reno, United States
+    - year: 2017
+      items: 
+        - Bierkamper Symposium at University of Nevada, Reno, United States
+    - year: 2015
+      items: 
+        - Joint Academic Annual Conference of China zoological society and Chinese association for physiological sciences, Xi'an, China
+    - year: 2015
+      items: 
+        - The young scholars' frontier symposium on quantitative biology development, Beijing, China
+    - year: 2014
+      items: 
+        - The 9th Beijing Life Sciences Graduate Forum, Beijing, China
