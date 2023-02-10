@@ -13,12 +13,12 @@ hr {
 }
 
 table {
-  td, th {
-    color: var(--global-text-color);
-  }
-  td {
-    font-size: 1rem;
-  }
+    td, th {
+      color: var(--global-text-color);
+    }
+    td {
+      font-size: 1rem;
+    }
 }
 
 a, table.table a {
@@ -470,7 +470,7 @@ footer.sticky-bottom {
     font-size: 2rem;
     text-align: center;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0em;
   }
   h2 {
     margin-bottom: 1rem;
@@ -479,20 +479,21 @@ footer.sticky-bottom {
     }
   }
   h2.year {
-    color: var(--global-divider-color);
-    border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
-    margin-top: 2rem;
-    margin-bottom: -2rem;
+    color: var(--global-theme-color);
+    border-bottom: 1px solid var(--global-divider-color); //year position
+    padding-top: 0rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
     text-align: right;
   }
   ol.bibliography {
     list-style: none;
     padding: 0;
     margin-top: 0;
+    margin-bottom: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       .preview {
         width: 100%;
         min-width: 80px;
@@ -504,8 +505,8 @@ footer.sticky-bottom {
         abbr {
           display: inline-block;
           background-color: var(--global-theme-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
           a {
             color: white;
             &:hover {
@@ -516,6 +517,16 @@ footer.sticky-bottom {
         .award {
           color: var(--global-theme-color) !important;
           border: 1px solid var(--global-theme-color);
+        }
+      }
+      .abbr2 {
+        height: 2rem;
+        margin-bottom: 0.5rem;
+        abbr2 {
+          display: inline-block;
+          background-color: var(--global-bg-color);
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
         }
       }
       .title {
@@ -533,15 +544,6 @@ footer.sticky-bottom {
           border-bottom: 1px solid;
           font-style: normal;
         }
-        > span.more-authors {
-          color: var(--global-text-color-light);
-          border-bottom: 1px dashed var(--global-text-color-light);
-          cursor: pointer;
-          &:hover {
-              color: var(--global-text-color);
-              border-bottom: 1px dashed var(--global-text-color);
-          }
-        }
       }
       .links {
         a.btn {
@@ -554,18 +556,6 @@ footer.sticky-bottom {
           &:hover {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color);
-          }
-        }
-      }
-      .badges {
-        span {
-          display: inline-block;
-          color: $black-color;
-          height: 100%;
-          padding-left: 0.5rem;
-          vertical-align: middle;
-          &:hover {
-            text-decoration: underline;
           }
         }
       }
@@ -671,56 +661,88 @@ html.transition *:after {
 }
 
 progress {
-     /* Positioning */
-     position: fixed;
-     left: 0;
-     top: 56px;
-     z-index: 10;
-   
-     /* Dimensions */
-     width: 100%;
-     height: 1px;
-   
-     /* Reset the appearance */
-     -webkit-appearance: none;
-        -moz-appearance: none;
-             appearance: none;
-   
-     /* Get rid of the default border in Firefox/Opera. */
-     border: none;
-   
-     /* Progress bar container for Firefox/IE10  */
-     background-color: transparent;
-   
-     /* Progress bar value for IE10  */
-     color: var(--global-theme-color);
- }
- 
- progress::-webkit-progress-bar {
-     background-color: transparent;
- }
-   
- progress::-webkit-progress-value {
-     background-color: var(--global-theme-color);
- }
-   
- progress::-moz-progress-bar {
-     background-color: var(--global-theme-color);
- }
- 
- .progress-container {
-     width: 100%;
-     background-color: transparent;
-     position: fixed;
-     top: 56px;
-     left: 0;
-     height: 5px;
-     display: block;
- }
- 
- .progress-bar {
-     background-color: var(--global-theme-color);
-     width: 0%;
-     display: block;
-     height: inherit;
- }
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 56px;
+  z-index: 10;
+
+  /* Dimensions */
+  width: 100%;
+  height: 1px;
+
+  /* Reset the appearance */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+
+  /* Progress bar container for Firefox/IE10  */
+  background-color: transparent;
+
+  /* Progress bar value for IE10  */
+  color: var(--global-theme-color);
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--global-theme-color);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--global-theme-color);
+}
+
+.progress-container {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  height: 5px;
+  display: block;
+}
+
+.progress-bar {
+  background-color: var(--global-theme-color);
+  width: 0%;
+  display: block;
+  height: inherit;
+}
+
+
+// html scroll smoothly
+html {
+  scroll-behavior: smooth;
+}
+
+#backtop a { /* back to top button */
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  width:50px;
+  height: 50px;
+  position: fixed;
+  bottom: 50px; /*  The distance from the small button to the bottom of the browser  */
+  right: 60px; /*  The distance from the small button to the right border of the browser  */
+  color: var(--global-theme-color); /*  The color of the text in the small button  */
+  z-index: 1000;
+  background: var(--global-bg-color); /*  Small button background  */
+  padding: auto; /*  The distance from the text in the small button to the edge of the button  */
+  border-radius: 50px; /*  The bending degree of the small button fillet （ radius ）*/
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  font-weight: bold; /*  The thickness of the text in the small button  */
+  text-decoration: none !important;
+  box-shadow:0 0 2px 2px var(--global-theme-color);
+}
+
+#backtop a:hover { /*  When the mouse hovers over the small button  */
+  background: var(--global-theme-color); /*  The background color of the small button  */
+  color: var(--global-text-color); /*  Text color  */
+}
