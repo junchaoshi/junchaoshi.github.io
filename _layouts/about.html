@@ -10,7 +10,7 @@ layout: default
           </h1>
           <p class="desc">{{ page.subtitle }}</p>
         </header>
-        
+
         <article>
           {% if page.carousels %}
             {% include carousel.html height="50" unit="%" duration="5" number="1" %}
@@ -44,26 +44,30 @@ layout: default
             {{ content }}
           </div>
 
-          {% if page.news -%}
           <!-- News -->
-          {%- include news.html %}
+          {% if page.news -%}
+            <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">news</a></h2>
+            {%- include news.html %}
           {%- endif %}
+
+          <!-- Selected papers -->
           {% if page.selected_papers -%}
-            <!-- Selected papers -->
+            <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
             {%- include selected_papers.html %}
           {%- endif %}
-          {%- if page.social %}
-          <!-- Social -->
-          <div class="social">
-            <div class="contact-icons">
-            {% include social.html %}
-            </div>
 
-            <div class="contact-note">
-              {{ site.contact_note }}
+          <!-- Social -->
+          {%- if page.social %}
+            <div class="social">
+              <div class="contact-icons">
+                {% include social.html %}
+              </div>
+
+              <div class="contact-note">
+                {{ site.contact_note }}
+              </div>
+              
             </div>
-            
-          </div>
           {%- endif %}
           
           <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=jCbAWaI4lB2tFT2F85T83HBgMuukxcGslivsqhkwajM&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'>
@@ -72,7 +76,6 @@ layout: default
           <div class="contact-note text-center">
             {{ site.contact_note }}
           </div>
-
         </article>
 
 </div>
