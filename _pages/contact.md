@@ -24,7 +24,7 @@ social: true
 
 &nbsp;
 
-# Openning
+# Opening positions
 
 <p>RNA enthusiasts are very welcome to join! Detailed recruitment requirements can be found <a href="/assets/pdf/Recruitment_requirement.pdf" target=_blank>HERE</a>.</p>
 
