@@ -28,6 +28,6 @@ social: true
 
 <p>RNA enthusiasts are very welcome to join! Detailed recruitment requirements can be found <a href="/assets/pdf/Recruitment_requirement.pdf" target=_blank>HERE</a>.</p>
 
-<p><b>Assistant Researchers/Associate Researchers/Postdoctorates</b> are encouraged to email Dr. Shi a CV, a cover letter and a research statement describing past research and future research goals, and contact information of 2-3 references.</p>
+<p><b>Assistant Researchers/Postdoctorates</b> are encouraged to email Dr. Shi a CV, a cover letter and a research statement describing past research and future research goals, and contact information of 2-3 references.</p>
 
 <p><b>Graduate students/Research assistants</b> may contact Dr. Shi via email directly.</p>
