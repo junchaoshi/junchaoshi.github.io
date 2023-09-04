@@ -11,7 +11,7 @@ lastname: Shi
 publications: 'author^=*Junchao'
 
 teaser: >
-    Faculty of ncRNAmoics at BIG.
+    Genetics, Genomics and Bioinformatics
 
 profile:
     name: Junchao Shi, Ph.D.
