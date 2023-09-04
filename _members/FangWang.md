@@ -16,7 +16,7 @@ teaser: >
 profile:
     name: Fang Wang, Ph.D.
     align: right
-    image: members/Wangf-profile.jpg
+    image: members/wangf-profile.jpg
     position: Assistant Investigator
     email: 1610852096@qq.com
     website: 
