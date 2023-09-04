@@ -1,7 +1,7 @@
 ---
 layout: member
 inline: false
-group: Staff
+group: Colleagues
 group_rank: 2
 team_frontpage: true
 
