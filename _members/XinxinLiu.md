@@ -11,7 +11,7 @@ lastname: Liu
 publications: 
 
 teaser: >
-    Genetics
+    Bioinformatics
 
 profile:
     name: Xinxin Liu
