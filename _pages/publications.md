@@ -3,8 +3,8 @@ layout: page
 permalink: /publications/
 title: Publications
 description: "* indicates equal contributions, # indicates corresponding author.<h6>An up-to-date list is available on <a href='https://scholar.google.com/citations?user=v04jJXoAAAAJ&hl=en'>Google Scholar</a>.</h6>"
-years: [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012]
-years_big: [2023]
+years: [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012]
+years_big: [2024, 2023]
 years_ucr: [2023, 2022, 2021, 2020]
 years_unr: [2019, 2018, 2017]
 years_ioz: [2017, 2016, 2015, 2014, 2013, 2012]
