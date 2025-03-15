@@ -37,7 +37,7 @@
   type: time_table
   contents:
     - title: Principal Investigator
-      institution:  Beijing Institute of Genomics, Chinese Academy of Sciences / China National Center for Bioinformation
+      institution:  China National Center for Bioinformation / Beijing Institute of Genomics, Chinese Academy of Sciences
       year: 2023 - now
     - title: Postdoctoral Scholar in Bioinformatics and RNA Biology
       institution:  University of Utah, United States
@@ -58,10 +58,16 @@
     - title: National Natural Science Foundation of China
       year: 2024-2026
       description: National Level Program (Youth) 
+    - title: Chinese Academy of Sciences
+      year: 2024-2029
+      description: Strategic Priority Research Program
 
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: 2024
+      items: 
+        - Beijing Chaoyang "Phoenix Program" Youth Talent
     - year: 2022
       items: 
         - Chinese Government Award for Outstanding Self-financed Students Abroad

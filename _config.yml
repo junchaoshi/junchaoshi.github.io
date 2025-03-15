@@ -2,12 +2,12 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Shi Lab @ BIG # the website title
+title: Shi Lab @ CNCB # the website title
 first_name: 
 middle_name: 
 last_name: Shi Lab
 lab_name: ncRNAomics
-email: shijc@big.ac.cn
+email: shijc@cncb.ac.cn
 description: Lab
 footer_text: > 
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with modified <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
