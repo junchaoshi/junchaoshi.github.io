@@ -18,7 +18,7 @@ profile:
     align: right
     image: members/liuxx-profile.jpg
     position: Ph.D. Student
-    email: liuxinxin@big.ac.cn
+    email: liuxinxin@cncb.ac.cn
     website: 
     github: xinxinliu-Bioinfor
     twitter: 

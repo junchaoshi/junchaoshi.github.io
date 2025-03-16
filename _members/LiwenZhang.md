@@ -18,7 +18,7 @@ profile:
     align: right
     image: members/zhanglw-profile.jpg
     position: Postdoctoral Researcher
-    email: zhangliwen@big.ac.cn
+    email: zhangliwen@cncb.ac.cn
     website: 
     github: 
     twitter: 

@@ -18,7 +18,7 @@ profile:
     align: right
     image: members/Lils-profile.jpg
     position: Postdoctoral Researcher
-    email: liliansheng@big.ac.cn
+    email: liliansheng@cncb.ac.cn
     website: 
     github: 
     twitter: 

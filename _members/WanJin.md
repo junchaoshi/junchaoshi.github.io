@@ -18,7 +18,7 @@ profile:
     align: right
     image: members/jinw-profile.jpg
     position: Master Student
-    email: jinwan@big.ac.cn
+    email: jinwan@cncb.ac.cn
     website: 
     github: 
     twitter: 
