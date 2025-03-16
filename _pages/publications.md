@@ -4,7 +4,7 @@ permalink: /publications/
 title: Publications
 description: "* indicates equal contributions, # indicates corresponding author.<h6>An up-to-date list is available on <a href='https://scholar.google.com/citations?user=v04jJXoAAAAJ&hl=en'>Google Scholar</a>.</h6>"
 years: [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012]
-years_big: [2024, 2023]
+years_cncb: [2024, 2023]
 years_ucr: [2023, 2022, 2021, 2020]
 years_unr: [2019, 2018, 2017]
 years_ioz: [2017, 2016, 2015, 2014, 2013, 2012]
@@ -19,18 +19,18 @@ nav_order: 1
 <div class="publications">
 
 <h6>
-<a href="#works_at_BIG">🧑‍🏫Works at BIG</a>
+<a href="#works_at_CNCB">🧑‍🏫Works at CNCB</a>
 <a href="#works_at_UCR">👨‍🎓Works at UCR</a>
 <a href="#works_at_UNR">🧑Works at UNR</a>
 <a href="#works_at_IOZ">👶Works at UCAS</a>
 </h6>
 
-<a name="works_at_BIG"></a>
-<h1>Works at BIG</h1>
+<a name="works_at_CNCB"></a>
+<h1>Works at CNCB</h1>
 
-{%- for y in page.years_big %}
+{%- for y in page.years_cncb %}
   <h2 class="year">{{y}}</h2>
-  {% bibliography -f works_at_BIG -q @*[year={{y}}]* %}
+  {% bibliography -f works_at_CNCB -q @*[year={{y}}]* %}
 {% endfor %}
 
 <a name="works_at_UCR"></a>

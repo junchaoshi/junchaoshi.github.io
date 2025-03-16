@@ -13,7 +13,7 @@ social: true
 </div>
 
 <div>
-    <p><b>Email: </b>shijc [at] big.ac.cn</p>
+    <p><b>Email: </b>shijc [at] cncb.ac.cn</p>
     <p style="line-height: 1.0em;"><b>Postal adress:</b></p>
     <p style="line-height: 1.0em;">Junchao Shi</p>
     <p style="line-height: 1.0em;">Beijing Institute of Genomics, Chinese Academy of Sciences</p>
