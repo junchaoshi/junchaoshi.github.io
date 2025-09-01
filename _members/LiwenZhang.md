@@ -8,7 +8,7 @@ team_frontpage: true
 title: Zhang, Liwen, Ph.D.
 description: Postdoctoral Researcher
 lastname: Zhang
-publications: 
+publications: 'author^=*Liwen'
 
 teaser: >
     Pathology and Pathophysiology

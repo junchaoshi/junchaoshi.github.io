@@ -1,9 +1,9 @@
 ---
 layout: member
-inline: false
-group: Colleagues
-group_rank: 2
-team_frontpage: true
+inline: true
+group: Alumini
+group_rank: 4
+team_frontpage: false
 
 title: Li, Liansheng, Ph.D.
 description: Postdoctoral Researcher
@@ -18,7 +18,7 @@ profile:
     align: right
     image: members/Lils-profile.jpg
     position: Postdoctoral Researcher
-    email: liliansheng@cncb.ac.cn
+    email: 
     website: 
     github: 
     twitter: 

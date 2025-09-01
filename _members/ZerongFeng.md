@@ -23,7 +23,7 @@ profile:
     github: GladioFeng
     twitter: 
     address: >
-        Beijing Institute of Genomics<br />
+        China National Center for Bioinformation<br />
         Chinese Academy of Sciences<br />
         Beijing 100101, China
 ---
