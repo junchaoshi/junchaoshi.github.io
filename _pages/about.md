@@ -10,6 +10,8 @@ carousels:
       url: https://www.nature.com/articles/s41556-022-00880-5
     - image: assets/img/main_page/PANDORAseq.jpg
       url: https://www.nature.com/articles/s41556-021-00652-7
+    - image: assets/img/main_page/Maternalinheritance.jpg
+      url: https://www.nature.com/articles/s41467-025-63054-5
     - image: assets/img/main_page/tsRNAserum.jpg
       url: publications/
     - image: assets/img/main_page/sncRNAtools.jpg

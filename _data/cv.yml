@@ -87,6 +87,9 @@
 - title: Invited Talks
   type: time_table
   contents:
+    - year: 2025
+      items: 
+        - The Finnish Conference for Environmental Science 2025, Helsinki, Finland 
     - year: 2023
       items: 
         - The GPB Omics & Bioinformatics Frontiers Symposium 2023, Beijing, China
