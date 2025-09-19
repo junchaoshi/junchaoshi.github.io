@@ -2,7 +2,7 @@
 layout: member
 inline: true
 group: Alumini
-group_rank: 4
+group_rank: 99
 team_frontpage: false
 
 title: Li, Liansheng, Ph.D.
@@ -16,16 +16,13 @@ teaser: >
 profile:
     name: Liansheng Li, Ph.D.
     align: right
-    image: members/Lils-profile.jpg
+    image: 
     position: Postdoctoral Researcher
     email: 
     website: 
     github: 
     twitter: 
-    address: >
-        Beijing Institute of Genomics<br />
-        Chinese Academy of Sciences<br />
-        Beijing 100101, China
+    address: 
 ---
 
 I received a Bachelor of Science degree in Biological Science from Hainan University in 2015. I then obtained a Master's degree in Biochemistry and Molecular Biology from the joint training program of Anhui Medical University and the Academy of Military Medical Sciences in 2018. In 2023, I completed my Ph.D. studies in Biochemistry and Molecular Biology at the University of the Chinese Academy of Sciences. My research focuses on understanding how centriolar proteins and other factors affect the development and function of spermatogenesis, and how centriolar proteins contribute to ciliogenesis. Through my work, I hope to identify and characterize novel factors that influence spermatogenesis and develop new therapies for male infertility.
