@@ -8,7 +8,7 @@ team_frontpage: true
 title: Feng, Zerong
 description: Ph.D. Student
 lastname: Feng
-publications: 
+publications: 'author^=*Zerong'
 
 teaser: >
     Genetics

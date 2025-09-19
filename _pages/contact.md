@@ -16,7 +16,7 @@ social: true
     <p><b>Email: </b>shijc [at] cncb.ac.cn</p>
     <p style="line-height: 1.0em;"><b>Postal adress:</b></p>
     <p style="line-height: 1.0em;">Junchao Shi</p>
-    <p style="line-height: 1.0em;">Beijing Institute of Genomics, Chinese Academy of Sciences</p>
+    <p style="line-height: 1.0em;">China National Center for Bioinformation / Beijing Institute of Genomics, Chinese Academy of Sciences</p>
     <p style="line-height: 1.0em;">NO.1 Beichen West Road, Chaoyang District, Beijing 100101, China</p>
 </div>    
 

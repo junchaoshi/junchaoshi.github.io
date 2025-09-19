@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <b>Beijing Institute of Genomics, Chinese Academy of Sciences / China National Center for Bioinformation</b>
+subtitle: <b>China National Center for Bioinformation / Beijing Institute of Genomics, Chinese Academy of Sciences</b>
 
 carousels:
   - images: 
