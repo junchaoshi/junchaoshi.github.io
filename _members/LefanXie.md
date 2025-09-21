@@ -7,7 +7,7 @@ team_frontpage: true
 
 title: Xie, Lefan 
 description: Master Student
-lastname: 
+lastname: Xie
 publications: 
 
 teaser: >

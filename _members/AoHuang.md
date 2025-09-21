@@ -7,7 +7,7 @@ team_frontpage: true
 
 title: Huang, Ao
 description: Master Student
-lastname: 
+lastname: Huang
 publications: 
 
 teaser: >
