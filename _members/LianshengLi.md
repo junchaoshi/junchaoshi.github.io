@@ -1,7 +1,7 @@
 ---
 layout: member
 inline: true
-group: Alumini
+group: Alumni
 group_rank: 99
 team_frontpage: false
 
