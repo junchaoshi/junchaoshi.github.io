@@ -16,6 +16,8 @@ carousels:
       url: publications/
     - image: assets/img/main_page/sncRNAtools.jpg
       url: publications/
+    - image: assets/img/main_page/SpermAgingcode.jpg
+      url: https://link.springer.com/article/10.1038/s44318-025-00687-8
 
 profile:
   align: right
