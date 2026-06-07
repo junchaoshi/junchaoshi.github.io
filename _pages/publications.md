@@ -3,11 +3,6 @@ layout: page
 permalink: /publications/
 title: Publications
 description: "* indicates equal contributions, # indicates corresponding author.<h6>An up-to-date list is available on <a href='https://scholar.google.com/citations?user=v04jJXoAAAAJ&hl=en'>Google Scholar</a>.</h6>"
-years: [2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012]
-years_cncb: [2026, 2025, 2024, 2023]
-years_ucr: [2023, 2022, 2021, 2020]
-years_unr: [2019, 2018, 2017]
-years_ioz: [2017, 2016, 2015, 2014, 2013, 2012]
 nav: true
 nav_order: 1
 ---
@@ -28,7 +23,8 @@ nav_order: 1
 <a name="works_at_CNCB"></a>
 <h1>Works at CNCB</h1>
 
-{%- for y in page.years_cncb %}
+{% assign years_cncb = "works_at_CNCB" | bibliography_years %}
+{%- for y in years_cncb %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f works_at_CNCB -q @*[year={{y}}]* %}
 {% endfor %}
@@ -36,7 +32,8 @@ nav_order: 1
 <a name="works_at_UCR"></a>
 <h1>Works at UCR</h1>
 
-{%- for y in page.years_ucr %}
+{% assign years_ucr = "works_at_UCR" | bibliography_years %}
+{%- for y in years_ucr %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f works_at_UCR -q @*[year={{y}}]* %}
 {% endfor %}
@@ -44,7 +41,8 @@ nav_order: 1
 <a name="works_at_UNR"></a>
 <h1>Works at UNR</h1>
 
-{%- for y in page.years_unr %}
+{% assign years_unr = "works_at_UNR" | bibliography_years %}
+{%- for y in years_unr %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f works_at_UNR -q @*[year={{y}}]* %}
 {% endfor %}
@@ -52,7 +50,8 @@ nav_order: 1
 <a name="works_at_IOZ"></a>
 <h1>Works at UCAS</h1>
 
-{%- for y in page.years_ioz %}
+{% assign years_ioz = "works_at_IOZ" | bibliography_years %}
+{%- for y in years_ioz %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f works_at_IOZ -q @*[year={{y}}]* %}
 {% endfor %}
