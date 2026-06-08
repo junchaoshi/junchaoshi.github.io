@@ -239,12 +239,26 @@ blockquote {
 }
 
 #light-toggle {
-  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
   border: 0;
   background-color: inherit;
   color: var(--global-text-color);
-  &:hover {
+  font-size: 1.1rem;
+  line-height: 1;
+
+  &:hover,
+  &:focus {
     color: var(--global-hover-color);
+    text-decoration: none;
+  }
+
+  > i {
+    display: none;
   }
 }
 

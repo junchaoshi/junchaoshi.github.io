@@ -1,26 +1,35 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-let toggleTheme = (theme) => {
-  if (theme == "dark") {
-    setTheme("light");
-  } else {
-    setTheme("dark");
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+let getThemeFromSetting = (themeSetting) => {
+  if (themeSetting == "system") {
+    return systemTheme.matches ? "dark" : "light";
   }
-}
+  return themeSetting;
+};
+
+let toggleTheme = (themeSetting) => {
+  if (themeSetting == "system") {
+    setTheme("light", "light");
+  } else if (themeSetting == "light") {
+    setTheme("dark", "dark");
+  } else {
+    setTheme(getThemeFromSetting("system"), "system");
+  }
+};
 
 
-let setTheme = (theme) =>  {
+let setTheme = (theme, themeSetting) =>  {
+  themeSetting = themeSetting || theme;
   transTheme();
   setHighlight(theme);
   setGiscusTheme(theme);
 
-  if (theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-  }
-  else {
-    document.documentElement.removeAttribute("data-theme");
-  }
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-theme-setting", themeSetting);
   localStorage.setItem("theme", theme);
+  localStorage.setItem("theme-setting", themeSetting);
 
   // Updates the background of medium-zoom overlay.
   if (typeof medium_zoom !== 'undefined') {
@@ -68,16 +77,27 @@ let transTheme = () => {
 }
 
 
-let initTheme = (theme) => {
-  if (theme == null || theme == 'null') {
-    const userPref = window.matchMedia;
-    if (userPref && userPref('(prefers-color-scheme: dark)').matches) {
-        theme = 'dark';
-    }
+let initTheme = (themeSetting) => {
+  if (themeSetting == null || themeSetting == "null") {
+    themeSetting = localStorage.getItem("theme");
+  }
+  if (themeSetting == null || themeSetting == "null") {
+    themeSetting = "system";
   }
 
-  setTheme(theme);
+  setTheme(getThemeFromSetting(themeSetting), themeSetting);
 }
 
+const syncSystemTheme = () => {
+  if (localStorage.getItem("theme-setting") == "system") {
+    setTheme(getThemeFromSetting("system"), "system");
+  }
+};
 
-initTheme(localStorage.getItem("theme"));
+if (typeof systemTheme.addEventListener === "function") {
+  systemTheme.addEventListener("change", syncSystemTheme);
+} else if (typeof systemTheme.addListener === "function") {
+  systemTheme.addListener(syncSystemTheme);
+}
+
+initTheme(localStorage.getItem("theme-setting"));

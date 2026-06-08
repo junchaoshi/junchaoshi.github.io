@@ -16,15 +16,6 @@
   --global-divider-color: rgba(0,0,0,.1);
   --global-card-bg-color: #{$white-color};
 
-  .fa-sun {
-    display : none;
-  }
-  .fa-moon {
-    padding-left: 10px;
-    padding-top: 12px;
-    display : block;
-  }
-  
   .repo-img-light {
     display: block;
   }
@@ -46,20 +37,79 @@ html[data-theme='dark'] {
   --global-distill-app-color: #{$grey-color-light};
   --global-divider-color: #424246;
   --global-card-bg-color: #{$grey-900};
-
-  .fa-sun {
-    padding-left: 10px;
-    padding-top: 12px;
-    display : block;
-  }
-  .fa-moon {
-    display : none;
-  }
-  
   .repo-img-light {
     display: none;
   }
   .repo-img-dark {
     display: block;
+  }
+}
+
+@font-face {
+  font-family: "tabler-icons";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/tabler-icons-outline.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "tabler-icons-filled";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/tabler-icons-filled.woff2") format("woff2");
+}
+
+.ti {
+  font-family: "tabler-icons" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ti-sun-moon::before {
+  content: "\f4a3";
+}
+
+.ti-moon-filled,
+.ti-sun-filled {
+  font-family: "tabler-icons-filled" !important;
+}
+
+.ti-moon-filled::before {
+  content: "\f684";
+}
+
+.ti-sun-filled::before {
+  content: "\f6a9";
+}
+
+html:not([data-theme-setting]) {
+  #light-toggle-system {
+    display: inline-block;
+  }
+}
+
+html[data-theme-setting='system'] {
+  #light-toggle-system {
+    display: inline-block;
+  }
+}
+
+html[data-theme-setting='light'] {
+  #light-toggle-light {
+    display: inline-block;
+  }
+}
+
+html[data-theme-setting='dark'] {
+  #light-toggle-dark {
+    display: inline-block;
   }
 }
