@@ -13,13 +13,16 @@ nav_rank: 2
 ## {{ group }}
     {% assign members = site.members | sort: "lastname" | where: "group", group %}
     {% for member in members %}
+{% assign member_group = member.group | downcase %}
 <p>
     <div class="card {% if member.inline == false %}hoverable{% endif %}">
         <div class="row no-gutters">
+            {% unless member_group == "alumni" %}
             <div class="col-sm-4 col-md-3">
                 <img src="{{ '/assets/img/' | append: member.profile.image | relative_url }}" class="card-img img-fluid" alt="{{ member.profile.name }}" />
             </div>
-            <div class="team col-sm-8 col-md-9">
+            {% endunless %}
+            <div class="team {% if member_group == "alumni" %}col-12{% else %}col-sm-8 col-md-9{% endif %}">
                 <div class="card-body">
                     {% if member.inline == false %}<a href="{{ member.url | relative_url }}">{% endif %}
                     <h5 class="card-title">{{ member.profile.name }}</h5>
@@ -46,9 +49,11 @@ nav_rank: 2
                     {% if member.profile.website %}
                         <a href="{{ member.profile.website }}" class="card-link" target="_blank"><i class="fas fa-globe"></i></a>
                     {% endif %}
+                    {% if member.profile.address %}
                     <p class="card-text">
-                        <small class="test-muted"><i class="fas fa-thumbtack"></i> {{ member.profile.address | replace: '<br />', ', ' }}</small>
+                        <small class="text-muted"><i class="fas fa-thumbtack"></i> {% if member_group == "alumni" %}Current: {% endif %}{{ member.profile.address | replace: '<br />', ', ' }}</small>
                     </p>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -57,4 +62,3 @@ nav_rank: 2
 <br /> 
     {% endfor %}
 {% endfor %}
-
