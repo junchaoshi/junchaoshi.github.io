@@ -30,7 +30,7 @@ profile:
 
 <!-- altmetric -->
 <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
-<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<script async src="https://integration-badge.dimensions.ai/static/ai/badge.js" charset="utf-8"></script>
 
 I am a Principal Investigator at the China National Center for Bioinformation, Beijing Institute of Genomics, Chinese Academy of Sciences, where I delve into the intricacies of small RNAs and their modifications. My research explores their impact on normal and disease conditions, as well as their potential diagnostic and prognostic value for precision medicine. My primary research focus revolves around the systematic discovery of `non-canonical small RNAs`, including tRNA-derived small RNAs (tsRNAs) and rRNA-derived small RNAs (rsRNAs).
 With a background in bioinformatics and developmental biology, I am driven to expand our understanding of life processes from an evolutionary perspective. Additionally, I actively engage in improving RNA sequencing technology and designing software for the analysis of small RNA expression, structure, and function.
