@@ -8,7 +8,7 @@ team_frontpage: true
 title: Xie, Lefan 
 description: Master Student
 lastname: Xie
-publications: 
+publication_author: 'Xie, Lefan'
 
 teaser: >
     Biotechnology
@@ -29,5 +29,3 @@ profile:
 ---
 
 I graduated from Shanghai Jiaotong University in 2022 with a bachelor's degree in bioinformatics. My graduation project focused on computational biochemistry. Due to my passion for genomics and my keen interest in data mining and analysis, I am currently pursuing a master's degree under the guidance of Dr. Shi.
-
-

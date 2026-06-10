@@ -8,7 +8,7 @@ team_frontpage: false
 title: Li, Liansheng, Ph.D.
 description: Postdoctoral Researcher
 lastname: Li
-publications: 
+publication_author: 'Li, Liansheng'
 
 teaser: >
     Biochemistry and Molecular Biology

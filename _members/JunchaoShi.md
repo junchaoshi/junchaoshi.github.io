@@ -8,7 +8,7 @@ team_frontpage: true
 title: Shi, Junchao, Ph.D.
 description: Principal Investigator
 lastname: Shi
-publications: 'author^=*Junchao'
+publication_author: 'Shi, Junchao'
 
 teaser: >
     Genetics, Genomics and Bioinformatics

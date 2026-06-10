@@ -8,7 +8,7 @@ team_frontpage: true
 title: Liu, Xinxin
 description: Ph.D. Student
 lastname: Liu
-publications: 'author^=*Xinxin'
+publication_author: 'Liu, Xinxin'
 
 teaser: >
     Bioinformatics

@@ -8,7 +8,7 @@ team_frontpage: true
 title: Wang, Xue
 description: Master Student
 lastname: Wang
-publications: 
+publication_author: 'Wang, Xue'
 
 teaser: >
     Genetics

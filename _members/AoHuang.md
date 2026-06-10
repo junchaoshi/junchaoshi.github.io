@@ -8,7 +8,7 @@ team_frontpage: true
 title: Huang, Ao
 description: Master Student
 lastname: Huang
-publications: 
+publication_author: 'Huang, Ao'
 
 teaser: >
    Information and Computation Science

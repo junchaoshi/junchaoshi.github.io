@@ -8,7 +8,7 @@ team_frontpage: true
 title: Jin, Wan
 description: Master Student
 lastname: Jin
-publications: 
+publication_author: 'Jin, Wan'
 
 teaser: >
     Biological Science

@@ -70,7 +70,9 @@ layout: default
       {% include about_tiles.html items=site.supports %}
     {% endif %}
 
-    {% if page.publications %}
+    {% if page.publication_author %}
+      {% member_bibliography -f papers %}
+    {% elsif page.publications %}
       <h2 id="publications">Publications</h2>
       <div class="publications">
         {% bibliography -f papers -q @*[{{page.publications}}]* %}

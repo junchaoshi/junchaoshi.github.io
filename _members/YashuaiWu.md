@@ -8,7 +8,7 @@ team_frontpage: true
 title: Wu, Yashuai
 description: Research Assistant
 lastname: Wu
-publications: 
+publication_author: 'Wu, Yashuai'
 
 teaser: >
     Biological Science

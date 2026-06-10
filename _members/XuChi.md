@@ -7,7 +7,7 @@ team_frontpage: true
 
 title: Chi, Xu, Ph.D.
 description: Assistant Researcher
-publications: 'author^=*Xu'
+publication_author: 'Xu, Chi'
 
 teaser: >
     Bioinformatics and Epigenetics

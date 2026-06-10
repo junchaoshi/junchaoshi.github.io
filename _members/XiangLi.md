@@ -8,7 +8,7 @@ team_frontpage: true
 title: Li, Xiang
 description: Ph.D. Student
 lastname: Li
-publications: 
+publication_author: 'Li, Xiang'
 
 teaser: >
     Genetics
