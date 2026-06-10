@@ -2,34 +2,139 @@
 layout: default
 ---
 <!-- _layouts/cv.html -->
-        <div class="post">
+        <div class="post cv-post">
 
           <header class="post-header">
             <h1 class="post-title">{{ page.title }} {% if page.cv_pdf %}<a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}" target="_blank" rel="noopener noreferrer" class="float-right"><i class="fas fa-file-pdf"></i></a>{% endif %}</h1>
             <p class="post-description">{{ page.description }}</p>
           </header>
 
-          <article>
-            <div class="cv">
-              {% for entry in site.data.cv %}
-                <div class="card mt-3 p-3">
-                  <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
-                  <div>
-                  {% if entry.type == "list" %}
-                    {% include cv/list.html %}
-                  {% elsif entry.type == "map" %}
-                    {% include cv/map.html %}
-                  {% elsif entry.type == "nested_list" %}
-                    {% include cv/nested_list.html %}
-                  {% elsif entry.type == "time_table" %}
-                   {% include cv/time_table.html %}
-                  {% else %}
-                    {{ entry.contents }}
-                  {% endif %}
-                  </div>
-                </div>
-              {% endfor %}
+          <article class="cv-article">
+            <div class="cv-layout">
+              <nav class="cv-sidebar" aria-label="CV sections">
+                <ul class="cv-nav">
+                  {% for entry in site.data.cv %}
+                    {% assign section_id = entry.title | slugify %}
+                    <li>
+                      <a class="cv-nav-link{% if forloop.first %} active{% endif %}" href="#{{ section_id }}">{{ entry.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </nav>
+
+              <div class="cv">
+                {% for entry in site.data.cv %}
+                  {% assign section_id = entry.title | slugify %}
+                  <section id="{{ section_id }}" class="cv-section card mt-3 p-3">
+                    <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
+                    <div>
+                    {% if entry.type == "list" %}
+                      {% include cv/list.html %}
+                    {% elsif entry.type == "map" %}
+                      {% include cv/map.html %}
+                    {% elsif entry.type == "nested_list" %}
+                      {% include cv/nested_list.html %}
+                    {% elsif entry.type == "time_table" %}
+                    {% include cv/time_table.html %}
+                    {% else %}
+                      {{ entry.contents }}
+                    {% endif %}
+                    </div>
+                  </section>
+                {% endfor %}
               </div>
+            </div>
           </article>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              var sections = Array.from(document.querySelectorAll(".cv-section"));
+              var links = Array.from(document.querySelectorAll(".cv-nav-link"));
+              if (!sections.length || !links.length) return;
+
+              var byId = new Map(links.map(function (link) {
+                return [link.getAttribute("href").slice(1), link];
+              }));
+
+              function setActive(id) {
+                links.forEach(function (link) { link.classList.remove("active"); });
+                var active = byId.get(id);
+                if (active) active.classList.add("active");
+              }
+
+              function markerPosition() {
+                var navbar = document.querySelector(".navbar");
+                return (navbar ? navbar.getBoundingClientRect().bottom : 56) + 56;
+              }
+
+              var lockedId = null;
+              var unlockTimer = null;
+
+              function lockActive(id) {
+                lockedId = id;
+                setActive(id);
+                if (unlockTimer) window.clearTimeout(unlockTimer);
+                unlockTimer = window.setTimeout(function () {
+                  lockedId = null;
+                  updateActiveSection();
+                }, 1200);
+              }
+
+              function updateActiveSection() {
+                var marker = markerPosition();
+
+                if (lockedId) {
+                  var target = document.getElementById(lockedId);
+                  setActive(lockedId);
+                  if (target) {
+                    var targetRect = target.getBoundingClientRect();
+                    if (!(targetRect.top <= marker && targetRect.bottom > marker)) return;
+                  }
+                  lockedId = null;
+                }
+
+                var activeId = sections[0].id;
+
+                sections.forEach(function (section) {
+                  var rect = section.getBoundingClientRect();
+                  if (rect.top <= marker) activeId = section.id;
+                });
+
+                if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+                  activeId = sections[sections.length - 1].id;
+                }
+
+                setActive(activeId);
+              }
+
+              var ticking = false;
+              window.addEventListener("scroll", function () {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(function () {
+                  updateActiveSection();
+                  ticking = false;
+                });
+              }, { passive: true });
+
+              links.forEach(function (link) {
+                link.addEventListener("click", function () {
+                  lockActive(link.getAttribute("href").slice(1));
+                });
+              });
+
+              window.addEventListener("hashchange", function () {
+                var hashId = decodeURIComponent(window.location.hash.slice(1));
+                if (byId.has(hashId)) lockActive(hashId);
+              });
+
+              var initialHashId = decodeURIComponent(window.location.hash.slice(1));
+              if (byId.has(initialHashId)) {
+                lockActive(initialHashId);
+              } else {
+                updateActiveSection();
+              }
+            });
+          </script>
 
         </div>

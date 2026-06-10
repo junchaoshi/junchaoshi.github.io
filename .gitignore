@@ -10,3 +10,5 @@ Gemfile.lock
 vendor
 Gemfile
 _config_local.yml
+__pycache__/
+*.pyc
