@@ -239,15 +239,18 @@ blockquote {
 }
 
 #light-toggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 100%;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  min-height: auto;
+  padding: 0;
   border: 0;
   background-color: inherit;
   color: var(--global-text-color);
+  cursor: pointer;
   font-size: 1.1rem;
   line-height: 1;
 
@@ -259,6 +262,16 @@ blockquote {
 
   > i {
     display: none;
+    width: 1em;
+    min-width: 1em;
+    line-height: 1;
+    text-align: center;
+  }
+}
+
+@media (min-width: 576px) {
+  #light-toggle {
+    transform: translateY(4px);
   }
 }
 
@@ -276,8 +289,7 @@ blockquote {
   }
 
   #light-toggle {
-    min-height: auto;
-    padding: 0.5rem 0;
+    transform: none;
     font-size: 1.25rem;
   }
 }
@@ -528,6 +540,13 @@ footer.sticky-bottom {
 
     li {
       margin-bottom: 0.5rem;
+
+      @media (min-width: 576px) {
+        > .row > .col-sm-8 {
+          padding-left: 3rem;
+        }
+      }
+
       .preview {
         width: 100%;
         min-width: 80px;
@@ -535,12 +554,23 @@ footer.sticky-bottom {
       }
       .abbr {
         height: 2rem;
+        overflow: visible;
         margin-bottom: 0.5rem;
         abbr {
-          display: inline-block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 8rem;
+          height: 1rem;
+          margin: 0.2rem auto 0;
           background-color: var(--global-theme-color);
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
+          color: $white-color;
+          padding: 0 0.4rem;
+          font-size: 0.75rem;
+          overflow: hidden;
+          line-height: 1;
+          text-align: center;
+          white-space: nowrap;
           a {
             color: white;
             &:hover {

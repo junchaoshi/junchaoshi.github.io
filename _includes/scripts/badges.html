@@ -2,5 +2,10 @@
   <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 {%- endif %}
 {%- if site.badges.dimensions_badge %}
+  <script>
+    window.__dimensions_badge_url = "https://integration-badge.dimensions.ai";
+    window.__dimensions_detail_url = "https://integration-badge.dimensions.ai";
+    window.__dimensions_metrics_api = "https://dev-metrics-api.dimensions.ai";
+  </script>
   <script async src="https://integration-badge.dimensions.ai/static/ai/badge.js"></script>
 {%- endif %}

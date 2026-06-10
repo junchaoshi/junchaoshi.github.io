@@ -45,51 +45,6 @@ html[data-theme='dark'] {
   }
 }
 
-@font-face {
-  font-family: "tabler-icons";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url("../fonts/tabler-icons-outline.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "tabler-icons-filled";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url("../fonts/tabler-icons-filled.woff2") format("woff2");
-}
-
-.ti {
-  font-family: "tabler-icons" !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: 1;
-  speak: none;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.ti-sun-moon::before {
-  content: "\f4a3";
-}
-
-.ti-moon-filled,
-.ti-sun-filled {
-  font-family: "tabler-icons-filled" !important;
-}
-
-.ti-moon-filled::before {
-  content: "\f684";
-}
-
-.ti-sun-filled::before {
-  content: "\f6a9";
-}
-
 html:not([data-theme-setting]) {
   #light-toggle-system {
     display: inline-block;
@@ -112,4 +67,48 @@ html[data-theme-setting='dark'] {
   #light-toggle-dark {
     display: inline-block;
   }
+}
+
+.fa-half-sun-moon {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  font-style: normal;
+  font-variant: normal;
+  speak: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-half-sun-moon::before,
+.fa-half-sun-moon::after {
+  position: absolute;
+  inset: 0;
+  top: -0.5px;
+  bottom: -0.5px;
+  color: var(--global-text-color);
+  font: var(--fa-font-solid);
+  line-height: 1em;
+  text-align: center;
+}
+
+.fa-half-sun-moon::before {
+  content: "\f111";
+  clip-path: polygon(0 0, calc(50% - 0.5px) 0, calc(50% - 0.5px) 100%, 0 100%);
+}
+
+.fa-half-sun-moon::after {
+  right: -1.5px;
+  content: "\f185";
+  clip-path: polygon(calc(50% + 0.5px) 0, 100% 0, 100% 100%, calc(50% + 0.5px) 100%);
+  transform: translateX(-1px);
+}
+
+#light-toggle:hover .fa-half-sun-moon::before,
+#light-toggle:hover .fa-half-sun-moon::after,
+#light-toggle:focus .fa-half-sun-moon::before,
+#light-toggle:focus .fa-half-sun-moon::after {
+  color: var(--global-hover-color);
 }
