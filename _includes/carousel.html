@@ -28,20 +28,36 @@
         <div class="carousel__track">
           <ul>
             {% for item in page.carousels[number].images %}
+            {%- assign image_jpg_480 = item.image | replace: '.jpg', '-480.jpg' | replace: '.png', '-480.jpg' -%}
+            {%- assign image_jpg_640 = item.image | replace: '.jpg', '-640.jpg' | replace: '.png', '-640.jpg' -%}
             {%- assign image_jpg_800 = item.image | replace: '.jpg', '-800.jpg' | replace: '.png', '-800.jpg' -%}
             {%- assign image_jpg_1400 = item.image | replace: '.jpg', '-1400.jpg' | replace: '.png', '-1400.jpg' -%}
             {%- assign image_alt = item.alt | default: site.lab_name -%}
             <li class="carousel__slide">
               <a class="carousel__slide-link" href="{{ item.url }}" aria-label="{{ image_alt | escape }}">
+                {% if forloop.first %}
                 <img
                   src="{{ item.image | relative_url }}"
-                  srcset="{{ image_jpg_800 | relative_url }} 800w, {{ image_jpg_1400 | relative_url }} 1400w"
+                  srcset="{{ image_jpg_480 | relative_url }} 480w, {{ image_jpg_640 | relative_url }} 640w, {{ image_jpg_800 | relative_url }} 800w, {{ image_jpg_1400 | relative_url }} 1400w"
                   sizes="(max-width: 768px) 100vw, 1110px"
                   alt="{{ image_alt | escape }}"
                   width="1400"
                   height="700"
                   decoding="async"
-                  {% if forloop.first %}fetchpriority="high" loading="eager"{% else %}fetchpriority="low" loading="lazy"{% endif %}>
+                  fetchpriority="high"
+                  loading="eager">
+                {% else %}
+                <img
+                  data-src="{{ item.image | relative_url }}"
+                  data-srcset="{{ image_jpg_480 | relative_url }} 480w, {{ image_jpg_640 | relative_url }} 640w, {{ image_jpg_800 | relative_url }} 800w, {{ image_jpg_1400 | relative_url }} 1400w"
+                  sizes="(max-width: 768px) 100vw, 1110px"
+                  alt="{{ image_alt | escape }}"
+                  width="1400"
+                  height="700"
+                  decoding="async"
+                  fetchpriority="low"
+                  loading="lazy">
+                {% endif %}
               </a>
             </li>
             {% endfor %}
@@ -236,6 +252,26 @@
             }
         }
   }
+  var carousel{{ number }} = document.querySelector('#carousel{{ number }}');
+  function loadCarouselImages{{ number }}() {
+    if (!carousel{{ number }}) return;
+    var images = carousel{{ number }}.querySelectorAll('img[data-src]');
+    for (var i = 0; i < images.length; i++) {
+      if (images[i].dataset.srcset) {
+        images[i].srcset = images[i].dataset.srcset;
+        delete images[i].dataset.srcset;
+      }
+      if (images[i].dataset.src) {
+        images[i].src = images[i].dataset.src;
+        delete images[i].dataset.src;
+      }
+    }
+  }
+  if (carousel{{ number }}) {
+    carousel{{ number }}.addEventListener('click', loadCarouselImages{{ number }}, { once: true });
+    carousel{{ number }}.addEventListener('touchstart', loadCarouselImages{{ number }}, { once: true, passive: true });
+    carousel{{ number }}.addEventListener('keydown', loadCarouselImages{{ number }}, { once: true });
+  }
   {% if include.duration %}
   var carousel{{ number }}Started = false;
   function advanceCarousel{{ number }}(){
@@ -248,14 +284,18 @@
   }
   function startCarousel{{ number }}() {
     if (carousel{{ number }}Started) return;
+    loadCarouselImages{{ number }}();
     carousel{{ number }}Started = true;
     setInterval(advanceCarousel{{ number }}, {{ include.duration }}000);
   }
-  var carousel{{ number }} = document.querySelector('#carousel{{ number }}');
+  function autoStartCarousel{{ number }}() {
+    startCarousel{{ number }}();
+  }
   if (carousel{{ number }}) {
     carousel{{ number }}.addEventListener('click', startCarousel{{ number }}, { once: true });
     carousel{{ number }}.addEventListener('touchstart', startCarousel{{ number }}, { once: true, passive: true });
     carousel{{ number }}.addEventListener('keydown', startCarousel{{ number }}, { once: true });
+    autoStartCarousel{{ number }}();
   }
   {% endif %}
 </script>

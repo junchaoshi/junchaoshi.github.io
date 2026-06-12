@@ -1,0 +1,105 @@
+<script>
+// Set the theme in the head to avoid a light/dark flicker.
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+let getThemeFromSetting = (themeSetting) => {
+  if (themeSetting == "system") {
+    return systemTheme.matches ? "dark" : "light";
+  }
+  return themeSetting;
+};
+
+let toggleTheme = (themeSetting) => {
+  if (themeSetting == "system") {
+    setTheme("light", "light");
+  } else if (themeSetting == "light") {
+    setTheme("dark", "dark");
+  } else {
+    setTheme(getThemeFromSetting("system"), "system");
+  }
+};
+
+let setTheme = (theme, themeSetting) =>  {
+  themeSetting = themeSetting || theme;
+  transTheme();
+  setHighlight(theme);
+  setGiscusTheme(theme);
+
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-theme-setting", themeSetting);
+  localStorage.setItem("theme", theme);
+  localStorage.setItem("theme-setting", themeSetting);
+
+  if (typeof medium_zoom !== "undefined") {
+    medium_zoom.update({
+      background: getComputedStyle(document.documentElement)
+          .getPropertyValue("--global-bg-color") + "ee",
+    });
+  }
+};
+
+let setHighlight = (theme) => {
+  if (theme == "dark") {
+    document.getElementById("highlight_theme_light").media = "none";
+    document.getElementById("highlight_theme_dark").media = "";
+  } else {
+    document.getElementById("highlight_theme_dark").media = "none";
+    document.getElementById("highlight_theme_light").media = "";
+  }
+};
+
+let setGiscusTheme = (theme) => {
+  function sendMessage(message) {
+    const iframe = document.querySelector("iframe.giscus-frame");
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: message }, "https://giscus.app");
+  }
+
+  sendMessage({
+    setConfig: {
+      theme: theme,
+    },
+  });
+};
+
+let transTheme = () => {
+  document.documentElement.classList.add("transition");
+  window.setTimeout(() => {
+    document.documentElement.classList.remove("transition");
+  }, 500);
+};
+
+let initTheme = (themeSetting) => {
+  if (themeSetting == null || themeSetting == "null") {
+    themeSetting = localStorage.getItem("theme");
+  }
+  if (themeSetting == null || themeSetting == "null") {
+    themeSetting = "system";
+  }
+
+  setTheme(getThemeFromSetting(themeSetting), themeSetting);
+};
+
+const syncSystemTheme = () => {
+  if (localStorage.getItem("theme-setting") == "system") {
+    setTheme(getThemeFromSetting("system"), "system");
+  }
+};
+
+if (typeof systemTheme.addEventListener === "function") {
+  systemTheme.addEventListener("change", syncSystemTheme);
+} else if (typeof systemTheme.addListener === "function") {
+  systemTheme.addListener(syncSystemTheme);
+}
+
+initTheme(localStorage.getItem("theme-setting"));
+
+document.addEventListener("DOMContentLoaded", function() {
+  const mode_toggle = document.getElementById("light-toggle");
+  if (!mode_toggle) return;
+
+  mode_toggle.addEventListener("click", function() {
+    toggleTheme(localStorage.getItem("theme-setting") || "system");
+  });
+});
+</script>

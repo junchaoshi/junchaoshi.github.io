@@ -1,11 +1,27 @@
 {%- if site.enable_google_analytics -%}
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ window.dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
+    function loadGoogleAnalytics() {
+      if (window.__googleAnalyticsLoaded) return;
+      window.__googleAnalyticsLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}';
+      document.head.appendChild(script);
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics }}');
+    }
+    window.addEventListener('load', function() {
+      window.setTimeout(function() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGoogleAnalytics, { timeout: 4000 });
+        } else {
+          loadGoogleAnalytics();
+        }
+      }, 4000);
+    }, { once: true });
   </script>
 {%- endif -%}
 {%- if site.enable_panelbear_analytics -%}
