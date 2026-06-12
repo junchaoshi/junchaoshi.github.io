@@ -1,11 +1,53 @@
-{%- if site.badges.altmetric_badge %}
-  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-{%- endif %}
-{%- if site.badges.dimensions_badge %}
+{%- if site.badges.altmetric_badge or site.badges.dimensions_badge %}
   <script>
-    window.__dimensions_badge_url = "https://integration-badge.dimensions.ai";
-    window.__dimensions_detail_url = "https://integration-badge.dimensions.ai";
-    window.__dimensions_metrics_api = "https://dev-metrics-api.dimensions.ai";
+    (function () {
+      var badgesLoaded = false;
+
+      function appendScript(src) {
+        var script = document.createElement("script");
+        script.async = true;
+        script.src = src;
+        document.body.appendChild(script);
+      }
+
+      function loadBadges() {
+        if (badgesLoaded) return;
+        badgesLoaded = true;
+        {%- if site.badges.altmetric_badge %}
+        appendScript("https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js");
+        {%- endif %}
+        {%- if site.badges.dimensions_badge %}
+        window.__dimensions_badge_url = "https://integration-badge.dimensions.ai";
+        window.__dimensions_detail_url = "https://integration-badge.dimensions.ai";
+        window.__dimensions_metrics_api = "https://dev-metrics-api.dimensions.ai";
+        appendScript("https://integration-badge.dimensions.ai/static/ai/badge.js");
+        {%- endif %}
+      }
+
+      function watchBadges() {
+        var badges = document.querySelectorAll(".altmetric-embed, .__dimensions_badge_embed__");
+        if (!badges.length) return;
+        if (!("IntersectionObserver" in window)) {
+          window.setTimeout(loadBadges, 3000);
+          return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i += 1) {
+            if (entries[i].isIntersecting) {
+              observer.disconnect();
+              loadBadges();
+              break;
+            }
+          }
+        }, { rootMargin: "300px 0px" });
+        for (var i = 0; i < badges.length; i += 1) observer.observe(badges[i]);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", watchBadges);
+      } else {
+        watchBadges();
+      }
+    }());
   </script>
-  <script async src="https://integration-badge.dimensions.ai/static/ai/badge.js"></script>
 {%- endif %}

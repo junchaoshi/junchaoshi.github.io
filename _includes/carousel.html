@@ -28,7 +28,22 @@
         <div class="carousel__track">
           <ul>
             {% for item in page.carousels[number].images %}
-            <li class="carousel__slide" style="background-image: url('{{ item.image }}');"><a style="text-decoration:none;display:block;width:100%;height:100%;" href="{{ item.url }}"></a></li>
+            {%- assign image_jpg_800 = item.image | replace: '.jpg', '-800.jpg' | replace: '.png', '-800.jpg' -%}
+            {%- assign image_jpg_1400 = item.image | replace: '.jpg', '-1400.jpg' | replace: '.png', '-1400.jpg' -%}
+            {%- assign image_alt = item.alt | default: site.lab_name -%}
+            <li class="carousel__slide">
+              <a class="carousel__slide-link" href="{{ item.url }}" aria-label="{{ image_alt | escape }}">
+                <img
+                  src="{{ item.image | relative_url }}"
+                  srcset="{{ image_jpg_800 | relative_url }} 800w, {{ image_jpg_1400 | relative_url }} 1400w"
+                  sizes="(max-width: 768px) 100vw, 1110px"
+                  alt="{{ image_alt | escape }}"
+                  width="1400"
+                  height="700"
+                  decoding="async"
+                  {% if forloop.first %}fetchpriority="high" loading="eager"{% else %}fetchpriority="low" loading="lazy"{% endif %}>
+              </a>
+            </li>
             {% endfor %}
           </ul>
         </div>
@@ -139,6 +154,13 @@
   transition: transform 0.5s ease 0s;
   transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
 }
+.carousel__track ul {
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 .carousel__track .carousel__slide {
   display: block;
   top: 0;
@@ -159,9 +181,23 @@
 }
 .carousel__slide {
   height: 100%;
+  width: 100%;
   position: absolute;
   opacity: 0;
   overflow: hidden;
+}
+.carousel__slide-link,
+.carousel__slide img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.carousel__slide-link {
+  text-decoration: none;
+}
+.carousel__slide img {
+  object-fit: cover;
+  object-position: center;
 }
 .carousel__slide .overlay {height: 100%;}
 .carousel--thumb .carousel__indicator {
@@ -171,13 +207,6 @@
 .carousel__indicator {
   background-color: #fafafa;
 }
-{% for item in page.carousels[number].images %}
-.carousel__slide:nth-of-type({{ forloop.index }}),
-.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type({{ forloop.index }}) {
-  background-size: cover;
-  background-position: center;
-}
-{% endfor %}
 </style>
 
 <script>
@@ -208,13 +237,25 @@
         }
   }
   {% if include.duration %}
-  setInterval(function(){
+  var carousel{{ number }}Started = false;
+  function advanceCarousel{{ number }}(){
     var j=0;
     var elements = document.querySelectorAll('#carousel{{ number}} .carousel__control--forward');
     for(i=(elements.length - 1);i>-1;i--) {
       if(isVisible(elements[i])) j=i;
     }
     elements[j].click();
-  },{{ include.duration }}000);
+  }
+  function startCarousel{{ number }}() {
+    if (carousel{{ number }}Started) return;
+    carousel{{ number }}Started = true;
+    setInterval(advanceCarousel{{ number }}, {{ include.duration }}000);
+  }
+  var carousel{{ number }} = document.querySelector('#carousel{{ number }}');
+  if (carousel{{ number }}) {
+    carousel{{ number }}.addEventListener('click', startCarousel{{ number }}, { once: true });
+    carousel{{ number }}.addEventListener('touchstart', startCarousel{{ number }}, { once: true, passive: true });
+    carousel{{ number }}.addEventListener('keydown', startCarousel{{ number }}, { once: true });
+  }
   {% endif %}
 </script>
