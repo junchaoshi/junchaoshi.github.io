@@ -1,5 +1,9 @@
 ---
 layout: member
+lang: en
+translation_key: member-XinxinLiu
+alternate_url: /zh/members/XinxinLiu/
+alternate_lang: zh-CN
 inline: false
 group: Graduate Students
 group_rank: 3

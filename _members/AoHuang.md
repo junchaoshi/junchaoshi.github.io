@@ -1,5 +1,9 @@
 ---
 layout: member
+lang: en
+translation_key: member-AoHuang
+alternate_url: /zh/members/AoHuang/
+alternate_lang: zh-CN
 inline: false
 group: Graduate Students
 group_rank: 3

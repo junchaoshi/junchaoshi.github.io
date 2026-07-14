@@ -1,5 +1,9 @@
 ---
 layout: member
+lang: en
+translation_key: member-WanJin
+alternate_url: /zh/members/WanJin/
+alternate_lang: zh-CN
 inline: false
 group: Graduate Students
 group_rank: 3

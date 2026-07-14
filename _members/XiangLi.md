@@ -1,5 +1,9 @@
 ---
 layout: member
+lang: en
+translation_key: member-XiangLi
+alternate_url: /zh/members/XiangLi/
+alternate_lang: zh-CN
 inline: false
 group: Graduate Students
 group_rank: 3
@@ -14,7 +18,7 @@ teaser: >
     Genetics
 
 profile:
-    name: Li Xiang
+    name: Xiang Li
     align: right
     image: members/lix-profile.jpg
     position: Ph.D. Student

@@ -1,5 +1,9 @@
 ---
 layout: member
+lang: en
+translation_key: member-LianshengLi
+alternate_url: /zh/members/LianshengLi/
+alternate_lang: zh-CN
 inline: true
 group: Alumni
 group_rank: 99
@@ -22,7 +26,7 @@ profile:
     website: 
     github: 
     twitter: 
-    address: 
+    address: Academy of Military Medical Sciences
 ---
 
 I received a Bachelor of Science degree in Biological Science from Hainan University in 2015. I then obtained a Master's degree in Biochemistry and Molecular Biology from the joint training program of Anhui Medical University and the Academy of Military Medical Sciences in 2018. In 2023, I completed my Ph.D. studies in Biochemistry and Molecular Biology at the University of the Chinese Academy of Sciences. My research focuses on understanding how centriolar proteins and other factors affect the development and function of spermatogenesis, and how centriolar proteins contribute to ciliogenesis. Through my work, I hope to identify and characterize novel factors that influence spermatogenesis and develop new therapies for male infertility.

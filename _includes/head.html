@@ -1,5 +1,6 @@
     <!-- Metadata, OpenGraph and Schema.org -->
     {% include metadata.html %}
+    {% include scripts/language.html %}
 
     <!-- Bootstrap & MDB -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -28,6 +29,11 @@
     {% endif %}
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    {% if page.alternate_url and page.alternate_lang %}
+    <link rel="alternate" hreflang="{{ page.lang | default: site.lang }}" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <link rel="alternate" hreflang="{{ page.alternate_lang }}" href="{{ page.alternate_url | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{% if page.lang == 'zh-CN' %}{{ page.alternate_url | absolute_url }}{% else %}{{ page.url | replace:'index.html','' | absolute_url }}{% endif %}">
+    {% endif %}
     
     <!-- Dark Mode -->
     {% if site.enable_darkmode %}

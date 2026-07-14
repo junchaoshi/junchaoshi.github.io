@@ -2,6 +2,10 @@
 layout: about
 title: About
 permalink: /
+lang: en
+translation_key: about
+alternate_url: /zh/
+alternate_lang: zh-CN
 subtitle: <b>China National Center for Bioinformation / Beijing Institute of Genomics, Chinese Academy of Sciences</b>
 
 carousels:

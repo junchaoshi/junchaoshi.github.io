@@ -1,5 +1,9 @@
 ---
 layout: member
+lang: en
+translation_key: member-LiwenZhang
+alternate_url: /zh/members/LiwenZhang/
+alternate_lang: zh-CN
 inline: false
 group: Colleagues
 group_rank: 2

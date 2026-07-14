@@ -2,6 +2,10 @@
 layout: page
 permalink: /repositories/
 title: Softwares
+lang: en
+translation_key: repositories
+alternate_url: /zh/repositories/
+alternate_lang: zh-CN
 description: 
 nav: true
 nav_order: 3

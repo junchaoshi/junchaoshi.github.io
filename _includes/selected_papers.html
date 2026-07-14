@@ -1,6 +1,8 @@
 
 <hr>
+{% assign page_lang = page.lang | default: site.lang %}
+{% assign strings = site.data.i18n[page_lang] %}
 <div class="publications">
-  <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
+  <h2><a href="{% if page_lang == 'zh-CN' %}{{ '/zh/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}" style="color: inherit;">{{ strings.selected_publications }}</a></h2>
   {% bibliography -f papers -q @*[selected=true]* %}
 </div>

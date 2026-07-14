@@ -1,0 +1,126 @@
+- id: general-information
+  title: 基本信息
+  type: map
+  contents:
+    - name: 姓名
+      value: 侍骏超
+    - name: 语言
+      value: 中文（普通话、<a href='https://zh.wikipedia.org/wiki/吴语'>吴语</a>）、英语
+
+- id: education
+  title: 教育经历
+  type: time_table
+  contents:
+    - title: 遗传学、基因组学与生物信息学 哲学博士
+      institution: 美国加州大学河滨分校
+      year: 2019 - 2021
+      description:
+        - <u>导师：</u><a href='http://qichen-lab.info/'>Dr. Qi Chen</a>、<a href='https://tongzhoulab.org/'>Dr. Tong Zhou</a>
+        - '学位论文：Exploring Non-Canonical Regulatory Small RNAs in Mammals'
+    - title: 细胞与分子生物学 博士研究生
+      institution: 美国内华达大学里诺分校
+      year: 2016 - 2019
+      description:
+        - <u>导师：</u><a href='http://qichen-lab.info/'>Dr. Qi Chen</a>、<a href='https://tongzhoulab.org/'>Dr. Tong Zhou</a>
+        - '学位论文：Exploring Non-Canonical Regulatory Small RNAs in Mammals'
+    - title: 发育生物学 理学硕士（优秀毕业生）
+      institution: 中国科学院大学
+      year: 2013 - 2016
+      description:
+        - <u>导师：</u><a href='https://orcid.org/0000-0002-2721-635X'>段恩奎研究员</a>、<a href='https://www.researchgate.net/profile/Haibin-Wang-8'>王海滨研究员</a>
+        - '学位论文：植入前哺乳动物胚胎发育过程中基因不均等性的起源及动态变化研究'
+    - title: 生物技术（动物）专业 理学学士（优秀毕业生）
+      institution: 吉林大学
+      year: 2008 - 2012
+      description:
+        - '学位论文：水通道蛋白AQP3剪切异构体在小鼠睾丸组织的表达分析'
+
+- id: employment
+  title: 工作经历
+  type: time_table
+  contents:
+    - title: 研究员
+      institution: 国家生物信息中心
+      year: 2023 - 至今
+    - title: 博士后
+      institution: 美国犹他大学
+      year: 2023 - 2023
+    - title: 博士后
+      institution: 美国加州大学河滨分校
+      year: 2021 - 2023
+    - title: 科研助理
+      institution: 中国科学院动物研究所
+      year: 2012 - 2013
+
+- id: funding-support
+  title: 基金资助
+  type: time_table
+  contents:
+    - title: 国家自然科学基金
+      year: 2024-2026
+      description: 面上项目
+    - title: 国家自然科学基金
+      year: 2024-2026
+      description: 国家高层次青年人才项目
+    - title: 中国科学院
+      year: 2024-2029
+      description: 战略性先导科技专项（A类）
+
+- id: honors-and-awards
+  title: 荣誉奖励
+  type: time_table
+  contents:
+    - year: 2024
+      items:
+        - 北京市朝阳区“凤凰计划”青年人才
+    - year: 2022
+      items:
+        - 国家优秀自费留学生奖学金
+    - year: 2019
+      items:
+        - 加州大学河滨分校院长杰出奖学金
+    - year: 2018
+      items:
+        - 内华达大学里诺分校Raymond H. Berner分子生物科学杰出研究生奖学金
+    - year: 2015
+      items:
+        - 国家奖学金
+    - year: 2009
+      items:
+        - 国家奖学金
+
+- id: invited-talks
+  title: 受邀报告
+  type: time_table
+  contents:
+    - year: 2025
+      items:
+        - The Finnish Conference for Environmental Science 2025，芬兰赫尔辛基
+    - year: 2023
+      items:
+        - The GPB Omics & Bioinformatics Frontiers Symposium 2023，中国北京
+    - year: 2022
+      items:
+        - 加州大学河滨分校第 5 届 IIGB 年会，美国加利福尼亚州
+    - year: 2021
+      items:
+        - 'The GECKO Conference: Epigenetic Inheritance across species，线上会议'
+        - 'Keystone Symposia Non-Coding RNAs: Biology and Applications，线上会议'
+    - year: 2019
+      items:
+        - 第4届中美造血干细胞移植与肿瘤免疫国际研讨会，中国重庆
+    - year: 2018
+      items:
+        - Bioinformatics Mixer，内华达大学里诺分校，美国内华达
+    - year: 2017
+      items:
+        - Bierkamper Symposium，内华达大学里诺分校，美国内华达
+    - year: 2015
+      items:
+        - 中国动物学会与中国生理学会联合学术年会，中国西安
+    - year: 2015
+      items:
+        - 定量生物学发展青年学者前沿研讨会，中国北京
+    - year: 2014
+      items:
+        - 第9届北京生命科学研究生论坛，中国北京

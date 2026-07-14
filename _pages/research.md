@@ -2,6 +2,10 @@
 layout: page
 permalink: /research/
 title: Research
+lang: en
+translation_key: research
+alternate_url: /zh/research/
+alternate_lang: zh-CN
 nav: true
 nav_rank: 3
 ---

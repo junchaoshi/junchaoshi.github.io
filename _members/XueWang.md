@@ -1,5 +1,9 @@
 ---
 layout: member
+lang: en
+translation_key: member-XueWang
+alternate_url: /zh/members/XueWang/
+alternate_lang: zh-CN
 inline: false
 group: Graduate Students
 group_rank: 3

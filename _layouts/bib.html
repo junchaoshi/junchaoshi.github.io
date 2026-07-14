@@ -1,6 +1,8 @@
 ---
 ---
 <!-- _layouts/bib.html -->
+      {% assign page_lang = page.lang | default: site.lang %}
+      {% assign strings = site.data.i18n[page_lang] %}
       <div class="row">
 
         <div class="col-sm-2 abbr h-100">
@@ -139,13 +141,13 @@
           <!-- Links/Buttons -->
           <div class="links">
           {%- if entry.abstract %}
-            <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+            <a class="abstract btn btn-sm z-depth-0" role="button">{{ strings.abstract }}</a>
           {%- endif %}
           {%- if entry.arxiv %}
             <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
           {%- endif %}
           {%- if entry.bibtex_show %}
-            <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+            <a class="bibtex btn btn-sm z-depth-0" role="button">{{ strings.bib }}</a>
           {%- endif %}
           {%- if entry.html %}
             <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>

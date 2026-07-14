@@ -2,6 +2,9 @@
 layout: default
 ---
 <!-- _layouts/cv.html -->
+        {% assign page_lang = page.lang | default: site.lang %}
+        {% assign strings = site.data.i18n[page_lang] %}
+        {% if page.cv_data %}{% assign cv_entries = site.data[page.cv_data] %}{% else %}{% assign cv_entries = site.data.cv %}{% endif %}
         <div class="post cv-post">
 
           <header class="post-header">
@@ -11,10 +14,10 @@ layout: default
 
           <article class="cv-article">
             <div class="cv-layout">
-              <nav class="cv-sidebar" aria-label="CV sections">
+              <nav class="cv-sidebar" aria-label="{{ strings.cv_sections }}">
                 <ul class="cv-nav">
-                  {% for entry in site.data.cv %}
-                    {% assign section_id = entry.title | slugify %}
+                  {% for entry in cv_entries %}
+                    {% assign section_id = entry.id | default: entry.title | slugify %}
                     <li>
                       <a class="cv-nav-link{% if forloop.first %} active{% endif %}" href="#{{ section_id }}">{{ entry.title }}</a>
                     </li>
@@ -23,8 +26,8 @@ layout: default
               </nav>
 
               <div class="cv">
-                {% for entry in site.data.cv %}
-                  {% assign section_id = entry.title | slugify %}
+                {% for entry in cv_entries %}
+                  {% assign section_id = entry.id | default: entry.title | slugify %}
                   <section id="{{ section_id }}" class="cv-section card mt-3 p-3">
                     <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
                     <div>

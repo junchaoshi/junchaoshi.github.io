@@ -1,5 +1,9 @@
 ---
 layout: member
+lang: en
+translation_key: member-YashuaiWu
+alternate_url: /zh/members/YashuaiWu/
+alternate_lang: zh-CN
 inline: false
 group: Colleagues
 group_rank: 2

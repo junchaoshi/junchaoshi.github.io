@@ -1,5 +1,9 @@
 ---
 layout: member
+lang: en
+translation_key: member-JunchaoShi
+alternate_url: /zh/members/JunchaoShi/
+alternate_lang: zh-CN
 inline: false
 group: Group Leader
 group_rank: 1

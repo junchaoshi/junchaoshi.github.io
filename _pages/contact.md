@@ -2,7 +2,11 @@
 layout: page
 permalink: /contact/
 title: Contact
-description: 
+lang: en
+translation_key: contact
+alternate_url: /zh/contact/
+alternate_lang: zh-CN
+description:
 nav: true
 nav_order: 5
 social: true 

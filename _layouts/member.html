@@ -73,7 +73,8 @@ layout: default
     {% if page.publication_author %}
       {% member_bibliography -f papers %}
     {% elsif page.publications %}
-      <h2 id="publications">Publications</h2>
+      {% assign page_lang = page.lang | default: site.lang %}
+      <h2 id="publications">{{ site.data.i18n[page_lang].publications }}</h2>
       <div class="publications">
         {% bibliography -f papers -q @*[{{page.publications}}]* %}
       </div>

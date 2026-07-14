@@ -16,7 +16,8 @@ module Jekyll
         items = items[offset..max] if limit_entries?
         return '' if items.empty?
 
-        "<h2 id=\"publications\">Publications</h2>\n" \
+        heading = context.registers[:page]['lang'] == 'zh-CN' ? '论文' : 'Publications'
+        "<h2 id=\"publications\">#{heading}</h2>\n" \
           "<div class=\"publications\">\n#{render_items(items)}\n</div>"
       end
 
