@@ -9,7 +9,7 @@ group: 工作人员
 group_rank: 2
 team_frontpage: true
 
-title: 张力文，博士
+title: 张力文 博士
 description: 特别研究助理
 lastname: Zhang
 publication_author: 'Zhang, Liwen'
@@ -17,7 +17,7 @@ publication_author: 'Zhang, Liwen'
 teaser: 病理学与病理生理学
 
 profile:
-    name: 张力文，博士
+    name: 张力文 博士
     align: right
     image: members/zhanglw-profile.jpg
     position: 特别研究助理

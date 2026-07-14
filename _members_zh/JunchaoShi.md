@@ -9,7 +9,7 @@ group: 团队负责人
 group_rank: 1
 team_frontpage: true
 
-title: 侍骏超，博士
+title: 侍骏超 博士
 description: 研究组长
 lastname: Shi
 publication_author: 'Shi, Junchao'
@@ -17,7 +17,7 @@ publication_author: 'Shi, Junchao'
 teaser: 遗传学、基因组学与生物信息学
 
 profile:
-    name: 侍骏超，博士
+    name: 侍骏超 博士
     align: right
     image: members/shijc-profile.jpg
     position: 研究组长

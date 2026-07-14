@@ -9,7 +9,7 @@ group: 往届成员
 group_rank: 99
 team_frontpage: false
 
-title: 李连胜，博士
+title: 李连胜 博士
 description: 特别研究助理
 lastname: Li
 publication_author: 'Li, Liansheng'
@@ -17,7 +17,7 @@ publication_author: 'Li, Liansheng'
 teaser: 生物化学与分子生物学
 
 profile:
-    name: 李连胜，博士
+    name: 李连胜 博士
     align: right
     image: members/Lils-profile.jpg
     position: 特别研究助理
